@@ -19,7 +19,6 @@ JWT_SECRET=replace_with_a_long_random_secret
 JWT_EXPIRES_IN=24h
 MAX_FILE_SIZE=2097152
 CORS_ORIGIN=http://localhost:3000
-TRUST_PROXY=false
 SWAGGER_ENABLED=true
 LOG_LEVEL=info
 ALLOW_MAINTENANCE_ROUTES=false
@@ -247,7 +246,6 @@ npm start
 
 - Set `NODE_ENV=production`.
 - Set `CORS_ORIGIN` to a comma-separated list of trusted frontend origins.
-- Set `TRUST_PROXY` when running behind reverse proxies/load balancers (for accurate client IP and rate limiting).
 - Keep `SWAGGER_ENABLED=false` unless explicitly needed.
 - Set `LOG_LEVEL` (`info`, `warn`, `error`) per environment.
 - Keep `ALLOW_MAINTENANCE_ROUTES=false` by default in production.

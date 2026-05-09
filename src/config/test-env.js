@@ -19,6 +19,9 @@ const testSetup = async () => {
 
   // 2. Load environment variables
   dotenv.config({ path: envPath });
+
+  const configureDnsFromEnv = require('./configure-dns');
+  configureDnsFromEnv();
   
   // 3. Check required variables
   const requiredVars = ['MONGODB_URI', 'JWT_SECRET', 'PORT'];

@@ -6,7 +6,6 @@ const {
   corsOrigins,
   allowMaintenanceRoutes,
   swaggerEnabled,
-  trustProxy,
 } = require('./config/env');
 
 const express = require('express');
@@ -33,7 +32,6 @@ const fixRoutes = require('./routes/fix.routes');
 
 // Initialize express app
 const app = express();
-app.set('trust proxy', trustProxy);
 
 // Basic middleware
 app.use(requestContext);
@@ -140,7 +138,6 @@ const startServer = async () => {
       logger.info('server.started', {
         port: PORT,
         swaggerEnabled,
-        trustProxy,
       });
     });
 

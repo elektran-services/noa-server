@@ -12,6 +12,9 @@ if (!fs.existsSync(envPath)) {
 
 dotenv.config({ path: envPath });
 
+const configureDnsFromEnv = require('./configure-dns');
+configureDnsFromEnv();
+
 const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET'];
 const missingEnvVars = requiredEnvVars.filter((envVar) => !process.env[envVar]);
 if (missingEnvVars.length > 0) {
@@ -46,5 +49,4 @@ module.exports = {
   allowMaintenanceRoutes: parseBool(process.env.ALLOW_MAINTENANCE_ROUTES, false),
   maintenanceToken: process.env.MAINTENANCE_TOKEN || '',
   swaggerEnabled: parseBool(process.env.SWAGGER_ENABLED, !isProduction),
-  trustProxy: process.env.TRUST_PROXY || false,
 };
